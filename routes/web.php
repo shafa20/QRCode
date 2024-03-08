@@ -23,7 +23,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
 Route::get('/scan-qr-code', [UserController::class, 'scanQrCode'])->name('scan.qr.code');
+Route::get('/admin-qr-code', [UserController::class, 'adminQrCode'])->name('admin.qr.code');
 Route::get('/user/{userId}/download-pdf', [UserController::class, 'downloadPDF'])->name('user.download.pdf');
+Route::get('/admin/{adminId}/download-pdf', [UserController::class, 'downloadAdminPDF'])->name('admin.download.pdf');
 Route::get('/twitter', [TwitterController::class, 'handle'])->name('twitter');
 Route::get('/callback', [TwitterController::class, 'callbackHandle'])->name('twitter.callback');
 
@@ -33,6 +35,7 @@ Route::get('/callback', [TwitterController::class, 'callbackHandle'])->name('twi
 Route::get('/admin/login', 'App\Http\Controllers\Admin\Auth\LoginController@showLoginForm')->name('admin.login');
 Route::post('/admin/login', 'App\Http\Controllers\Admin\Auth\LoginController@login');
 Route::post('/admin/logout', 'App\Http\Controllers\Admin\Auth\LoginController@logout')->name('admin.logout');
+Route::get('/admin/home', 'App\Http\Controllers\Admin\HomeController@index')->name('admin.home');
 
 
 

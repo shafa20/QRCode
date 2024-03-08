@@ -77,6 +77,11 @@
                                         <i class="fab fa-twitter"></i> Login with Twitter
                                     </a>
 
+                                    <a href="{{ route('admin.login') }}" class="btn btn-primary"
+                                    style="margin-left: 10px;">
+                                    <i class="fab fa-admin"></i> Admin Login
+                                   </a>
+
                                 </div>
 
                                 @if (Route::has('password.request'))

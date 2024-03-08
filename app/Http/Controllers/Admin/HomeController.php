@@ -14,6 +14,9 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('adminpage');
+        $user = auth()->user();
+        $qrCode = $user->qr_code;
+        $qrCodeBase64 = base64_encode($qrCode);
+        return view('adminpage', ['user' => $user, 'qrCodeBase64' => $qrCodeBase64]);
     }
 }

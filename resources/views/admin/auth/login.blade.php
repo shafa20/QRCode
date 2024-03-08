@@ -66,10 +66,7 @@
                                         {{ __('Login') }}
                                     </button>
 
-                                    <a href="{{ route('twitter') }}" class="btn btn-primary"
-                                        style="margin-left: 10px;">
-                                        <i class="fab fa-twitter"></i> Login with Twitter
-                                    </a>
+
 
                                 </div>
 
