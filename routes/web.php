@@ -29,4 +29,10 @@ Route::get('/callback', [TwitterController::class, 'callbackHandle'])->name('twi
 
 
 
+// routes/Admin.php
+Route::get('/admin/login', 'App\Http\Controllers\Admin\Auth\LoginController@showLoginForm')->name('admin.login');
+Route::post('/admin/login', 'App\Http\Controllers\Admin\Auth\LoginController@login');
+Route::post('/admin/logout', 'App\Http\Controllers\Admin\Auth\LoginController@logout')->name('admin.logout');
+
+
 
